@@ -3,30 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <title>Mozilla Splash Page</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Light/Dark Mode Toggle -->
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="modeToggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
   <div class="container">
-    <!-- Firefox logo -->
-    <img src="firefox.png" alt="Mozilla Firefox Logo" class="logo" />
+    <!-- Header Section -->
+    <header>
+      <h1>Mozilla FireFox</h1>
+      <img src="firefox.png" alt="Mozilla Logo" />
+    </header>
 
-    <h1>Welcome to the Mozilla Universe!</h1>
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="video-wrapper">
+        <iframe
+          src="firefox.mp4"
+          title="Mozilla YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
 
-    <p>We fight for a better, safer, and more open internet — for everyone.</p>
+      <div class="video-content">
+        <h2>Firing the Fox</h2>
+        <p>
+          Mozilla is a global community of technologists, thinkers, and builders working together
+          to keep the Internet alive and accessible, empowering people worldwide as informed
+          contributors and creators.
+        </p>
+        <p>
+          Click the icons below to explore Mozilla's initiatives...
+        </p>
+      </div>
+    </section>
 
-    <!-- Local video -->
-    <div class="video-wrapper">
-      <video width="560" height="315" controls>
-        <source src="firefoxvid.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+    <!-- Icon Links -->
+    <section class="icons">
+      <a href="https://www.mozilla.org/en-US/firefox/new/">
+        <img src="images/firefox-logo-400px.png" alt="Firefox" />
+      </a>
+      <a href="https://www.mozilla.org/">
+        <img src="images/mozilla-dinosaur-400px.png" alt="Mozilla" />
+      </a>
+      <a href="https://addons.mozilla.org/">
+        <img src="images/firefox-addons-400px.png" alt="Add-ons" />
+      </a>
+      <a href="https://developer.mozilla.org/en-US/">
+        <img src="images/mdn.svg" alt="MDN" />
+      </a>
+    </section>
 
+    <!-- Footer with Firefox2 image -->
     <footer>
-      <p>🌐 Built with 🔥 by Mozilla fans</p>
+      <img src="firefox2.png" alt="Firefox" />
     </footer>
   </div>
+
+  <!-- JavaScript for Light Mode -->
+  <script>
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("light-mode");
+    });
+  </script>
 </body>
 </html>
