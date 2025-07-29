@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  background: linear-gradient(135deg, #ff7139, #00539f); /* Mozilla orange & blue */
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  width: 90%;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 1rem;
+  animation: spin 6s linear infinite;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #fffacd;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+.video-wrapper iframe {
+  max-width: 100%;
+  border: 4px solid #ffffff44;
+  border-radius: 12px;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #eeeeeeaa;
+}
+
+/* Funky logo spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
