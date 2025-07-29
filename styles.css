@@ -1,57 +1,169 @@
+/* Global Styles */
 body {
   margin: 0;
-  font-family: 'Fira Sans', sans-serif;
-  background: linear-gradient(135deg, #ff7139, #00539f); /* Mozilla orange & blue */
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  background-color: #0d1b2a;
+  color: #f5f5f5;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  max-width: 800px;
-  width: 90%;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.logo {
-  width: 100px;
-  margin-bottom: 1rem;
-  animation: spin 6s linear infinite;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #fffacd;
-}
-
-p {
-  font-size: 1.2rem;
+/* Header */
+header {
+  text-align: center;
   margin-bottom: 2rem;
-  color: #f0f0f0;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ff7139; /* Mozilla orange */
+}
+
+header img {
+  width: 100px;
+  margin-top: 1rem;
+  animation: spin 10s linear infinite;
+}
+
+/* Video Section */
+.video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .video-wrapper iframe {
-  max-width: 100%;
-  border: 4px solid #ffffff44;
-  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  height: 315px;
+  border: 4px solid #00539f; /* Mozilla blue */
+  border-radius: 10px;
 }
 
+.video-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.video-content h2 {
+  color: #ff7139;
+}
+
+.video-content a {
+  color: #ffd166;
+  text-decoration: underline;
+}
+
+/* Icon Section */
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.icons img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
 footer {
+  text-align: center;
   margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #eeeeeeaa;
 }
 
-/* Funky logo spin animation */
+footer img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+/* Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ff7139;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Light Mode */
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+body.light-mode header h1 {
+  color: #d7263d;
+}
+
+body.light-mode .video-wrapper iframe {
+  border-color: #2196f3;
+}
+
+body.light-mode .video-content h2 {
+  color: #2196f3;
+}
+
+/* Animations */
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
